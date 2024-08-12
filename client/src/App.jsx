@@ -1,11 +1,10 @@
+import ThemeChanger from "./components/ThemeChanger"
 
-import './App.css'
-
-function App() {
+const App = () => {
 
   return (
     <>
-      
+      <ThemeChanger />
     </>
   )
 }
