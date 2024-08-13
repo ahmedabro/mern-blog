@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react"
-import "react-toggle/style.css"
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
+import { useSelector, useDispatch } from 'react-redux'
+import { changeThemeValue } from "../features/theme/themeSlice";
 
 
 const ThemeChanger = () => {
-    const [theme, setTheme] = useState(window.matchMedia('(prefers-color-scheme: light)').matches ? "light" : "dark")
+    const theme = useSelector((state) => state.theme.value)
+    const dispatch = useDispatch()
     const [showDropdown, setShowDropdown] = useState(false)
 
     useEffect(() => {
-      console.log(theme)
       if(theme == "dark") {
         document.querySelector("body").classList.add("dark")
       } else {
@@ -17,7 +18,7 @@ const ThemeChanger = () => {
     }, [theme]);
 
     const changeTheme = (themeOption) => {
-        setTheme(themeOption)
+        dispatch(changeThemeValue(themeOption))
         setShowDropdown(false)
     }
   
