@@ -18,11 +18,11 @@
 body {
   margin: 0;
   background-color: #fff;
-  color: #000;
+  color: #666666;
   transition: 0.5s all ease-in-out;
 }
 
 body.dark {
   background-color: #333;
-  color: #fff;
+  color: #a0a0a0;
 }
