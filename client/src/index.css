@@ -13,16 +13,28 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-color: #fffefa;
+  --bg-color-dark: #18303c;
+
+  --header-bg-color: #FEFCF3;
+  --header-bg-color-dark: #092635;
+
+  --sidenav-bg-color: #F5EBE0;
+  --sidenav-bg-color-dark: #1B4242;
+
+  --active-link: #DBA39A;
+  --active-link-dark: #5C8374;
 }
 
 body {
   margin: 0;
-  background-color: #fff;
-  color: #666666;
+  background-color: var(--bg-color);
+  color: #000;
   transition: 0.5s all ease-in-out;
 }
 
 body.dark {
-  background-color: #333;
-  color: #a0a0a0;
+  background-color: var(--bg-color-dark);
+  color: #fff;
 }

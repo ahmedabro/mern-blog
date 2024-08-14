@@ -1,6 +1,16 @@
 import { useEffect } from "react"
 import { useSelector } from 'react-redux'
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar"
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Projects from "./pages/Projects"
+import SignIn from "./pages/SignIn"
+import SignUp from "./pages/SignUp"
 
 
 const App = () => {
@@ -17,8 +27,18 @@ const App = () => {
   }, [theme]);
 
   return (
-    <div className="bg-white dark:bg-[#333] min-h-screen transition duration-500 ease-in-out">
-      <Navbar />
+    
+    <div className="bg-[var(--bg-color)] dark:bg-[--bg-color-dark] min-h-screen transition duration-500 ease-in-out">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

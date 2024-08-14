@@ -21,10 +21,10 @@ const ThemeChanger = () => {
     return (
       <>
         <div className="relative w-fit hidden sm:block">
-            <div className="inline-flex items-center gap-2 px-4 py-3 mb-1 rounded-lg text-sm bg-white dark:bg-transparent border border-gray-500 text-black dark:text-white hover:cursor-pointer" onClick={() => setShowDropdown(!showDropdown)}>
+            <div className="inline-flex items-center gap-2 px-4 py-3 rounded-lg text-sm bg-[var(--header-bg-color)] dark:bg-transparent border border-gray-500 text-black dark:text-white hover:cursor-pointer" onClick={() => setShowDropdown(!showDropdown)}>
                 {theme === "light" ? <><IoSunny /></> : <><IoMoon /></> }
             </div>
-            <div className={`absolute ${showDropdown ? 'block' : 'hidden'} border border-gray-500 rounded-lg w-full bg-white dark:bg-[#333] text-black dark:text-white`}>
+            <div className={`absolute top-[calc(100%+5px)] ${showDropdown ? 'block' : 'hidden'} border border-gray-500 rounded-lg w-full bg-[var(--header-bg-color)] dark:bg-[var(--header-bg-color-dark)] text-black dark:text-white`}>
                 <div className="flex items-center justify-center py-2 border-b border-gray-500 gap-2 hover:cursor-pointer" onClick={() => changeTheme("light")}><IoSunnyOutline /></div>
                 <div className="flex items-center justify-center py-2 gap-2 hover:cursor-pointer" onClick={() => changeTheme("dark")}><IoMoonOutline /></div>
             </div>
